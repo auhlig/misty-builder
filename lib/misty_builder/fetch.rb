@@ -40,7 +40,7 @@ end
 
 def generate(api, target, name, api_version)
   File.open(target, "w") do |f|
-    f << "module Misty::Openstack::#{name}\n"
+    f << "module Misty::Openstack::#{name}::#{api_version.capitalize}\n"
     f << "  def #{api_version}\n"
     PP.pp(api, f)
     f << "  end\n"
