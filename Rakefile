@@ -12,16 +12,11 @@ namespace :api do
   desc "Fetch APIs"
   task :fetch do
     FileUtils.mkdir_p("./fetched")
-    sh("lib/misty_builder/fetch.rb")
+    sh("lib/misty_builder/tool.rb fetch")
   end
 
   desc "Diff APIs"
   task :diff do
-    sh("lib/misty_builder/compare.rb")
-  end
-
-  desc "Copy APIs"
-  task :copy do
-    sh("lib/misty_builder/compare.rb -c")
+    sh("lib/misty_builder/tool.rb compare")
   end
 end
